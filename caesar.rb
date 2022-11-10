@@ -21,6 +21,7 @@ end
 ##
 # Rotates ASCII value by a given key, wrapping around the lower or upper values.
 def rotate_chr(ascii_value, key, lower, upper)
+    key = key % 26
     # shift within A-Z or a-z
     if (ascii_value + key).between?(lower, upper)
         return (ascii_value + key).chr
